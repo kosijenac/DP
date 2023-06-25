@@ -14,10 +14,8 @@ public class Name {
     PrintStream pout;
 
     public void getSocket() throws IOException {
-        try (Socket server = new Socket(Symbols.nameServer,
-                Symbols.ServerPort)) {
-            din = new BufferedReader(
-                    new InputStreamReader(server.getInputStream()));
+        try (Socket server = new Socket(Symbols.nameServer, Symbols.ServerPort)) {
+            din = new BufferedReader(new InputStreamReader(server.getInputStream()));
             pout = new PrintStream(server.getOutputStream());
         }
     }
